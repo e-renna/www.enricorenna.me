@@ -1,0 +1,68 @@
+baseURL = 'https://www.enricorenna.me/'
+languageCode = 'en-us'
+title = 'Enrico Renna'
+theme = 'PaperMod'
+
+# Menu
+[[menu.main]]
+identifier = "archive"
+name = "Archives"
+url = "/archives/"
+weight = 10
+
+[[menu.main]]
+identifier = "categories"
+name = "Categories"
+url = "/categories/"
+weight = 20
+
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 30
+
+# Search
+[outputs]
+home = [ "HTML", "RSS", "JSON" ]
+
+# Taxonomies
+[taxonomies]
+  category = 'categories'
+
+# General
+[params]
+ShowReadingTime = true
+ShowPostNavLinks = true
+ShowCodeCopyButtons = true
+ShowAllPagesInArchive = true
+
+  # Home
+  [params.profileMode]
+  enabled = true
+  title = "Enrico Renna"
+  subtitle = "Welcome to my personal blog!"
+  imageUrl = "image.png"
+  imageTitle = "Enrico Renna - Picture"
+  imageWidth = 120
+  imageHeight = 120
+
+    [[params.profileMode.buttons]]
+    name = "Archive"
+    url = "/archives/"
+
+    [[params.profileMode.buttons]]
+    name = "Categories"
+    url = "/categories/"
+  
+    [[params.profileMode.buttons]]
+    name = "Search"
+    url = "/search/"
+
+  [[params.socialIcons]]
+  name = "GitHub"
+  url = "https://github.com/e-renna"
+
+  [[params.socialIcons]]
+  name = "LinkedIn"
+  url = "https://www.linkedin.com/in/enrico-renna/"
