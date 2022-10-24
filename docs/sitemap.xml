@@ -2,11 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.enricorenna.me/archives/</loc>
-  </url><url>
     <loc>https://www.enricorenna.me/categories/</loc>
+    <lastmod>2022-10-24T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://www.enricorenna.me/</loc>
+    <lastmod>2022-10-24T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://www.enricorenna.me/categories/homelab/</loc>
+    <lastmod>2022-10-24T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://www.enricorenna.me/homelab/</loc>
+    <lastmod>2022-10-24T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://www.enricorenna.me/homelab/how-to-deploy-own-site/</loc>
+    <lastmod>2022-10-24T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://www.enricorenna.me/categories/website/</loc>
+    <lastmod>2022-10-24T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://www.enricorenna.me/archives/</loc>
   </url><url>
     <loc>https://www.enricorenna.me/search/</loc>
   </url>

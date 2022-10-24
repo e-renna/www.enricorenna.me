@@ -1,6 +1,6 @@
 ---
 title: "How I Easily Deployed My Own Website"
-date: 2022-10-24T14:00:00+01:00
+date: 2022-10-24T10:00:00+01:00
 categories: [Homelab, Website]
 draft: false
 ---

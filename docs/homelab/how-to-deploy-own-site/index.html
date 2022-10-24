@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>How I Easily Deployed My Own Website | Enrico Renna</title>
+<meta name="keywords" content="">
+<meta name="description" content="In my free time, I love to work on personal projects (such as my homelab) and solve CTFs challenges. I figured out that it would be great if I could document all my attempts and experiments. I also wanted to share all of this, so that my experiences could help someone else in their project. As an added this would help me improve my reporting skills.
+The conclusion was, I needed a personal website in which I could share anything I wanted, without the limitations that some of the already available big platforms impose.">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.enricorenna.me/homelab/how-to-deploy-own-site/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://www.enricorenna.me/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.enricorenna.me/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.enricorenna.me/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.enricorenna.me/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.enricorenna.me/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="How I Easily Deployed My Own Website" />
+<meta property="og:description" content="In my free time, I love to work on personal projects (such as my homelab) and solve CTFs challenges. I figured out that it would be great if I could document all my attempts and experiments. I also wanted to share all of this, so that my experiences could help someone else in their project. As an added this would help me improve my reporting skills.
+The conclusion was, I needed a personal website in which I could share anything I wanted, without the limitations that some of the already available big platforms impose." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.enricorenna.me/homelab/how-to-deploy-own-site/" /><meta property="article:section" content="homelab" />
+<meta property="article:published_time" content="2022-10-24T10:00:00+01:00" />
+<meta property="article:modified_time" content="2022-10-24T10:00:00+01:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How I Easily Deployed My Own Website"/>
+<meta name="twitter:description" content="In my free time, I love to work on personal projects (such as my homelab) and solve CTFs challenges. I figured out that it would be great if I could document all my attempts and experiments. I also wanted to share all of this, so that my experiences could help someone else in their project. As an added this would help me improve my reporting skills.
+The conclusion was, I needed a personal website in which I could share anything I wanted, without the limitations that some of the already available big platforms impose."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Homelabs",
+      "item": "https://www.enricorenna.me/homelab/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "How I Easily Deployed My Own Website",
+      "item": "https://www.enricorenna.me/homelab/how-to-deploy-own-site/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How I Easily Deployed My Own Website",
+  "name": "How I Easily Deployed My Own Website",
+  "description": "In my free time, I love to work on personal projects (such as my homelab) and solve CTFs challenges. I figured out that it would be great if I could document all my attempts and experiments. I also wanted to share all of this, so that my experiences could help someone else in their project. As an added this would help me improve my reporting skills.\nThe conclusion was, I needed a personal website in which I could share anything I wanted, without the limitations that some of the already available big platforms impose.",
+  "keywords": [
+    
+  ],
+  "articleBody": "In my free time, I love to work on personal projects (such as my homelab) and solve CTFs challenges. I figured out that it would be great if I could document all my attempts and experiments. I also wanted to share all of this, so that my experiences could help someone else in their project. As an added this would help me improve my reporting skills.\nThe conclusion was, I needed a personal website in which I could share anything I wanted, without the limitations that some of the already available big platforms impose. Ideally, the framework would be free, open source, and easy to customise. Being able to publish it through GitHub pages would have been an added benefit. This would cut maintenance costs and the need to set up a VPS that would need to be updated regularly.\nFrom a cybersecurity point of view, the smaller the attack surface, the better. Solutions like Ghost or WordPress, are easier to use once deployed as they provide nice editors with an easy-to-use admin panel. However, the attack surface and maintenance costs are higher compared to a static website. That is the main reason why I opted for Hugo.\nHugo claims to be the world’s fastest framework for building websites. It is not a CMS but a static site generator. It is indeed very fast, customisable and once all the mechanics have been understood also easy to use.\nCurrently, Hugo has a total of 63,000 stars on GitHub. This might help you understand how popular this project is. Considering it is also open source, it is really unlikely this project could die anytime soon. This is the power of open-source projects after all!\nGetting started with Hugo Whatever OS you have installed on your machine, you will most likely be able to use Hugo, as they provide support for the following systems:\nmacOS (Darwin) for x64, i386, and ARM architectures Windows Linux OpenBSD FreeBSD I am using an Arch-based Linux distro, and therefore I will easily install Hugo through my packet manager. However, if you are using another OS, simply follow their official tutorial here.\nOnce you are done installing Hugo, open your terminal and use the command ‘hugo version’ to verify that the installation was successful. You should get an output similar to this:\nhugo version hugo v0.104.3+extended linux/amd64 BuildDate=unknown If you get an error of any kind, make sure that you’ve followed all the installation steps correctly.\nCreating a new Site Creating a new site with Hugo is extremely easy. On your terminal move to a suitable directory. Hugo will create a new folder there with all your website files. Once you are in the right directory, run the following command hugo new site SITENAME, and replace SITENAME with the name of your choice. Here is an example:\nhugo new site tutorial Congratulations! Your new Hugo site is created in /home/.../Hugo/tutorial. Just a few more steps and you're ready to go: 1. Download a theme into the same-named folder. Choose a theme from https://themes.gohugo.io/ or create your own with the \"hugo new theme \" command. 2. Perhaps you want to add some content. You can add single files with \"hugo new /.\". 3. Start the built-in live server via \"hugo server\". Visit https://gohugo.io/ for quickstart guide and full documentation. Adding a Theme to your New Site What makes Hugo amazing is not just the framework itself, but the community that surrounds it! There are thousands of themes freely available to you, and installing them is extremely easy! Go here, and pick a theme you like. Then click on the Download button that you can find on the theme page. In my case, this will be PaperMod. The download button will most likely redirect you to a GitHub page in which you will find a guide on how to install the theme. If you wish to install PaperMod you can follow these steps and enter these commands in your terminal:\ncd tutorial # Move to the website folder git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod You’ve now successfully downloaded the PaperMod theme and installed it in your themes folder. However, you still have to tell Hugo to use this theme for your website. To do so, open the config.toml and add this string at the end of the file: theme = 'PaperMod'. If you wish to use a single command instead of opening and editing the file you can use the following:\necho \"theme = 'PaperMod'\" \u003e\u003e config.toml This command will append the string theme = 'PaperMod' to the config file. If you want to customise your theme to fit your liking, just read the documentation on the GitHub repository of your theme.\nCreating your first Article/Page You will now want to create your first article or a page with some information. Luckily for you, creating a page is extremely easy, all it takes is a single command:\nhugo new posts/new-page.md You can find the newly created page in the contents/posts folder. By opening it you should see something similar to this:\n--- title: \"New Page\" date: 2022-10-15T13:53:18+01:00 draft: true --- This is the settings of the page itself. You can change the page title, the date and whether the page should be displayed on the website or not by changing draft to false. Then under the --- you can start writing the page content. Hugo uses MarkDown. If you are not familiar with it, you can find a helpful cheatsheet here.\nWebsite Preview Hugo offers a live server that can render your website. It will refresh every time you modify any file inside your website directory so that you can preview the edits live. To benefit from this feature, all you have to do is to start the server. First, move to the main directory of your Hugo site, and then enter this command on your terminal:\nhugo server -D Now, go to http://localhost:1313 and you will be able to see a preview of your website!\nBuilding the site Once you are satisfied with your edits, and you are ready to publish your site, all you need to do is build the site, so that you have all the files you need to upload on your hosting or push to your GitHub Repository. The following command will build the site:\nhugo -D It should take less than a second for Hugo to build the site, once done you can open the public folder, which can be found inside your Hugo site directory. There you will find all the files you need to finally deploy your website.\nConclusion I’ve personally created a GitHub Repository dedicated to this very site. There you will be able to see all the config files and the built website as well. I’ve then ended up using GitHub Pages to host the site, as it is very easy to use, and can be connected to a custom domain. If you are interested in understanding how GitHub Pages work, and how you can host your website there are well, I’d suggest you open this page, where you can find all the information you are looking for.\nGood luck deploying your newly made website!\n",
+  "wordCount" : "1195",
+  "inLanguage": "en",
+  "datePublished": "2022-10-24T10:00:00+01:00",
+  "dateModified": "2022-10-24T10:00:00+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.enricorenna.me/homelab/how-to-deploy-own-site/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Enrico Renna",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.enricorenna.me/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.enricorenna.me/" accesskey="h" title="Enrico Renna (Alt + H)">Enrico Renna</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.enricorenna.me/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.enricorenna.me/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.enricorenna.me/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      How I Easily Deployed My Own Website
+    </h1>
+    <div class="post-meta"><span title='2022-10-24 10:00:00 +0100 BST'>October 24, 2022</span>&nbsp;·&nbsp;6 min
+
+</div>
+  </header> 
+  <div class="post-content"><p>In my free time, I love to work on personal projects (such as my homelab) and solve CTFs challenges. I figured out that it would be great if I could document all my attempts and experiments. I also wanted to share all of this, so that my experiences could help someone else in their project. As an added this would help me improve my reporting skills.</p>
+<p>The conclusion was, I needed a personal website in which I could share anything I wanted, without the limitations that some of the already available big platforms impose. Ideally, the framework would be free, open source, and easy to customise. Being able to publish it through GitHub pages would have been an added benefit. This would cut maintenance costs and the need to set up a VPS that would need to be updated regularly.</p>
+<p>From a cybersecurity point of view, the smaller the attack surface, the better. Solutions like Ghost or WordPress, are easier to use once deployed as they provide nice editors with an easy-to-use admin panel. However, the attack surface and maintenance costs are higher compared to a static website. That is the main reason why I opted for <a href="https://gohugo.io/">Hugo</a>.</p>
+<p>Hugo claims to be the world&rsquo;s fastest framework for building websites. It is not a CMS but a static site generator. It is indeed very fast, customisable and once all the mechanics have been understood also easy to use.</p>
+<p>Currently, Hugo has a total of 63,000 stars on <a href="https://github.com/gohugoio/hugo">GitHub</a>. This might help you understand how popular this project is. Considering it is also open source, it is really unlikely this project could die anytime soon. This is the power of open-source projects after all!</p>
+<h2 id="getting-started-with-hugo">Getting started with Hugo<a hidden class="anchor" aria-hidden="true" href="#getting-started-with-hugo">#</a></h2>
+<p>Whatever OS you have installed on your machine, you will most likely be able to use Hugo, as they provide support for the following systems:</p>
+<ul>
+<li>macOS (Darwin) for x64, i386, and ARM architectures</li>
+<li>Windows</li>
+<li>Linux</li>
+<li>OpenBSD</li>
+<li>FreeBSD</li>
+</ul>
+<p>I am using an Arch-based Linux distro, and therefore I will easily install Hugo through my packet manager. However, if you are using another OS, simply follow <a href="https://gohugo.io/getting-started/installing">their official tutorial here.</a></p>
+<p>Once you are done installing Hugo, open your terminal and use the command &lsquo;hugo version&rsquo; to verify that the installation was successful. You should get an output similar to this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>hugo version
+</span></span><span style="display:flex;"><span>hugo v0.104.3+extended linux/amd64 BuildDate=unknown
+</span></span></code></pre></div><p>If you get an error of any kind, make sure that you&rsquo;ve followed all the installation steps correctly.</p>
+<h2 id="creating-a-new-site">Creating a new Site<a hidden class="anchor" aria-hidden="true" href="#creating-a-new-site">#</a></h2>
+<p>Creating a new site with Hugo is extremely easy. On your terminal move to a suitable directory. Hugo will create a new folder there with all your website files.
+Once you are in the right directory, run the following command <code>hugo new site SITENAME</code>, and replace SITENAME with the name of your choice. Here is an example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>hugo new site tutorial
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Congratulations! Your new Hugo site is created in /home/.../Hugo/tutorial.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Just a few more steps and you&#39;re ready to go:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>1. Download a theme into the same-named folder.
+</span></span><span style="display:flex;"><span>Choose a theme from https://themes.gohugo.io/ or
+</span></span><span style="display:flex;"><span>create your own with the &#34;hugo new theme &lt;THEMENAME&gt;&#34; command.
+</span></span><span style="display:flex;"><span>2. Perhaps you want to add some content. You can add single files
+</span></span><span style="display:flex;"><span>with &#34;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;.
+</span></span><span style="display:flex;"><span>3. Start the built-in live server via &#34;hugo server&#34;.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Visit https://gohugo.io/ for quickstart guide and full documentation.
+</span></span></code></pre></div><h2 id="adding-a-theme-to-your-new-site">Adding a Theme to your New Site<a hidden class="anchor" aria-hidden="true" href="#adding-a-theme-to-your-new-site">#</a></h2>
+<p>What makes Hugo amazing is not just the framework itself, but the community that surrounds it! There are thousands of themes freely available to you, and installing them is extremely easy! Go <a href="https://themes.gohugo.io/">here</a>, and pick a theme you like. Then click on the Download button that you can find on the theme page. In my case, this will be <a href="https://themes.gohugo.io/themes/hugo-papermod/">PaperMod</a>. The download button will most likely redirect you to a GitHub page in which you will find a guide on how to install the theme. If you wish to install PaperMod you can follow these steps and enter these commands in your terminal:</p>
+<pre tabindex="0"><code>cd tutorial # Move to the website folder
+
+git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+</code></pre><p>You&rsquo;ve now successfully downloaded the PaperMod theme and installed it in your themes folder. However, you still have to tell Hugo to use this theme for your website.
+To do so, open the <code>config.toml</code> and add this string at the end of the file: <code>theme = 'PaperMod'</code>.
+If you wish to use a single command instead of opening and editing the file you can use the following:</p>
+<pre tabindex="0"><code>echo &#34;theme = &#39;PaperMod&#39;&#34; &gt;&gt; config.toml
+</code></pre><p>This command will append the string <code>theme = 'PaperMod'</code> to the config file.
+If you want to customise your theme to fit your liking, just read the documentation on the GitHub repository of your theme.</p>
+<h2 id="creating-your-first-articlepage">Creating your first Article/Page<a hidden class="anchor" aria-hidden="true" href="#creating-your-first-articlepage">#</a></h2>
+<p>You will now want to create your first article or a page with some information. Luckily for you, creating a page is extremely easy, all it takes is a single command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>hugo new posts/new-page.md
+</span></span></code></pre></div><p>You can find the newly created page in the contents/posts folder. By opening it you should see something similar to this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;New Page&#34;
+</span></span><span style="display:flex;"><span>date: 2022-10-15T13:53:18+01:00
+</span></span><span style="display:flex;"><span>draft: true
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>This is the settings of the page itself. You can change the page title, the date and whether the page should be displayed on the website or not by changing draft to false.
+Then under the <code>---</code> you can start writing the page content. Hugo uses MarkDown. If you are not familiar with it, you can find a helpful <a href="https://www.markdownguide.org/cheat-sheet/">cheatsheet here</a>.</p>
+<h2 id="website-preview">Website Preview<a hidden class="anchor" aria-hidden="true" href="#website-preview">#</a></h2>
+<p>Hugo offers a live server that can render your website. It will refresh every time you modify any file inside your website directory so that you can preview the edits live. To benefit from this feature, all you have to do is to start the server. First, move to the main directory of your Hugo site, and then enter this command on your terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>hugo server -D
+</span></span></code></pre></div><p>Now, go to http://localhost:1313 and you will be able to see a preview of your website!</p>
+<h2 id="building-the-site">Building the site<a hidden class="anchor" aria-hidden="true" href="#building-the-site">#</a></h2>
+<p>Once you are satisfied with your edits, and you are ready to publish your site, all you need to do is build the site, so that you have all the files you need to upload on your hosting or push to your GitHub Repository. The following command will build the site:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>hugo -D
+</span></span></code></pre></div><p>It should take less than a second for Hugo to build the site, once done you can open the <code>public</code> folder, which can be found inside your Hugo site directory.
+There you will find all the files you need to finally deploy your website.</p>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>I&rsquo;ve personally created a <a href="https://github.com/e-renna/www.enricorenna.me">GitHub Repository</a> dedicated to this very site. There you will be able to see all the config files and the built website as well. I&rsquo;ve then ended up using GitHub Pages to host the site, as it is very easy to use, and can be connected to a custom domain. If you are interested in understanding how GitHub Pages work, and how you can host your website there are well, I&rsquo;d suggest you open <a href="https://pages.github.com/">this page</a>, where you can find all the information you are looking for.</p>
+<p>Good luck deploying your newly made website!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.enricorenna.me/">Enrico Renna</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
